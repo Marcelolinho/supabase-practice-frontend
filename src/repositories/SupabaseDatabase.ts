@@ -1,9 +1,18 @@
+import { supabase } from "./SupabaseConfig";
 
-
-export function createTable() {
-
+export async function insertData(tableName: string, data: any) {
+    try {
+        console.log("entrou no insert data")
+        await supabase.from(tableName).insert(data);
+    } catch (err) {
+        console.log(err);
+    }
 }
 
-export function insert() {
-    
+export async function deleteData(tableName: string, data: string) {
+    try {
+        await supabase.from(tableName).delete().eq("nome", data);
+    } catch (err) {
+        console.log(err);
+    }
 }
