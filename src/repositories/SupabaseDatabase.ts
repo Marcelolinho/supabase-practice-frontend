@@ -9,8 +9,9 @@ export async function insertData(tableName: string, data: any) {
     }
 }
 
-export async function deleteData(tableName: string, data: string) {
+export async function deleteData(tableName: string, data: any) {
     try {
+        console.log(data)
         await supabase.from(tableName).delete().eq("nome", data);
     } catch (err) {
         console.log(err);

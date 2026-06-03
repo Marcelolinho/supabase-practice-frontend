@@ -28,7 +28,7 @@ export default function PracticePage() {
       return;
     }
 
-    deleteData("alunos", deleteName);
+    deleteData("alunos", {nome: deleteName});
   };
 
   const handleSaveImage = async () => {
